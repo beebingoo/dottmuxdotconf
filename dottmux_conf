@@ -24,6 +24,11 @@ set -g status-fg white
 
 # powerline https://powerline.readthedocs.org/en/latest/index.html
 # $ pip install --user git+git://github.com/powerline/powerline
+#
+# also ssh, https protocol as well
+# $ pip install --user git+ssh://github.com/powerline/powerline
+# $ pip install --user git+https://github.com/powerline/powerline
+#
 # $ pip show powerline-status
 # export PATH="$HOME/.local/bin:$PATH"
 run-shell "powerline-daemon -q"
