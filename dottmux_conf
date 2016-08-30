@@ -1,0 +1,45 @@
+# tmux plugin manager
+# Powerline used as tmux stausline
+
+unbind C-b
+set -g prefix 'C-\'
+
+# Work with putty
+# set -g set-titles on
+# set -g status off
+
+# Start numbering by 1
+set -g base-index 1
+
+setw -g mode-keys vi
+
+set -g default-terminal "screen-256color"
+
+# status bar colors
+set -g status-bg default
+set -g status-fg white
+
+# alignment settings
+# set-option -g status-justify centre
+
+# powerline https://powerline.readthedocs.org/en/latest/index.html
+# $ pip install --user git+git://github.com/powerline/powerline
+# $ pip show powerline-status
+# export PATH="$HOME/.local/bin:$PATH"
+run-shell "powerline-daemon -q"
+source "/home/xfile/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+
+# tmux plugin manager
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of
+# tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
+# bind a reload key
+bind R source-file ~/.tmux.conf \; display-message "  Config reloaded..".
