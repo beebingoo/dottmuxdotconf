@@ -3,6 +3,8 @@
 
 unbind C-b
 set -g prefix 'C-\'
+# tmux -gt 2.1
+setw -g mouse on
 
 # Work with putty
 # set -g set-titles on
